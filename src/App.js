@@ -1,5 +1,5 @@
 import Sidebar from "./components/sidebar";
-import Table from "./components/table";
+import Table from "./pages/table";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -9,7 +9,6 @@ function App() {
         <Sidebar />
 
         <Routes>
-          {/* <Route  path="/" element={<Home />} /> */}
           <Route path="/table" element={<Table />} />
         </Routes>
       </BrowserRouter>
