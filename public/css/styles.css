@@ -883,23 +883,25 @@ a.todo-list-item:focus {
   background: #fff;
 }
 
-.fixed-table-container {
-  border: 1px solid #eee;
+.table thead th {
+  border: 1px solid #ddd;
 }
 
-.fixed-table-container thead th {
+.table thead th {
   background: #f7f7f8;
-  border-color: #ddd;
+
   color: #5f6468;
   font-weight: 300;
   font-size: 16px;
 }
 
-.fixed-table-container tbody td {
+.table tbody td {
   border: 1px solid #eee;
+  text-align: center;
+  vertical-align: middle !important ;
 }
 
-.fixed-table-container tbody td:last-child {
+.table tbody td:last-child {
   border-right: none;
 }
 
@@ -989,4 +991,8 @@ a.todo-list-item:focus {
   border-color: #ddd;
   height: 65px;
   overflow: scroll;
+}
+/* pagination */
+.pagination .page-link.active {
+  background: red;
 }
