@@ -1,13 +1,11 @@
 import React from "react";
-import axios from "axios";
-
 import { useEffect, useState } from "react";
 import Pagination from "./pagination";
-
+import { getTable } from "../services/Api";
+import { useLocation } from "react-router-dom";
 function Table() {
-  const [member, setMember] = useState([]);
   const [page, setPage] = useState(1);
-
+  const [member, setMember] = useState([]);
   const [url, setUrl] = useState(
     "https://randomuser.me/api/?page=1&results=10"
   );
@@ -18,11 +16,12 @@ function Table() {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get(url);
+      const res = await getTable(page);
+      console.log(res);
       return setMember(res.data.results);
     };
-    getData();
     console.log(url);
+    getData();
   }, [page, url]);
 
   return (
